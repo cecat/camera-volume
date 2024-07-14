@@ -1,8 +1,10 @@
 # Camera-volume add-on for Home Assistant
+CeC
+July 2024
 
 Monitor volume levels from microphones on remote cameras using ffmpeg to parse rtsp feeds.
 
-# Simple install as a local addon
+# To install as a local addon:
 
 1. Customize cameravolume.yaml with specifics regarding your MQTT broker address, MQTT username and password, and RTSP feeds (the same feeds you use in Frigate, which will have embedded credentils (so treat this as a secrets file)).
 
