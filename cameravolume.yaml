@@ -1,0 +1,29 @@
+#
+# CameraVolume.yaml
+# Local configuration.  Customize this file and place it in your /config directory
+#
+# CeC 7/15/24
+#
+
+# MQTT Config
+
+mqtt:
+  host: ""                   # IP address or hostname of your MQTT broker
+  port: 1883
+  topic_prefix: "HA/sensor"  # you'll use this to map to a variable in Home Asst.
+  client_id: "camvolume"     # customize if you'd like
+  user: ""                   # create this user in setup/people/users
+  password: ""               # ... and give it a password
+  stats_interval: 60
+
+# Cameras.  Note this assumes your camera has a microphone, in which case
+#           the sound will be included in the RTSP feed.
+#           Here if you are using Frigate you can use the very same paths.
+#
+#           Make sure to include your USERNAME, PASSWORD, and IP address(es)
+#           associated with your camera(s).
+
+cameras:
+  cam1:
+    ffmpeg:
+      path: "rtsp://USER:PASSWORD@IP:554/cam/realmonitor?channel=1&subtype=1"
