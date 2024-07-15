@@ -31,7 +31,7 @@ Thus you now have */addons/local/cameravolume* in Home Assistant.
 5. Make sure the permissions are correct - in your */addons/local/cameravolume*
 directory in Home Assistant do a 
 ```
-chmod 755 ./\**.
+chmod 755 .*
 ```
 
 Now the add-on should appear in your add-on store categorized as a local addon.
