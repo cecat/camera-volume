@@ -75,3 +75,15 @@ mqtt:
       unit_of_measurement: 'dB'
 ```
 
+# A Note about FFmpeg volume measurements
+
+FFmpeg measurements are in dBFS (decibels relative to Full Scale), where the maximum
+possible volume level (digitally, from the point of view of the microphone) is 0 dBFS.
+So these dBFS measurementsare negative numbers, and differ from the more commonly
+seen dB SPL (Sound Pressure Level) measurements we see.  With my very 
+limited poking around I see dBFS readings from this addon in the -50 to -60 range
+for a quiet evening without traffic noise, and about -40 playing Gimme Shelter near
+the camera at a volume my Apple watch pegged at 75dB.
+
+It's non-trivial to map dBFS to DB SPL, so this addon is more aimed at detecting
+changes or unusual sound events.
