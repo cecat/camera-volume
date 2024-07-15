@@ -7,7 +7,7 @@ to parse rtsp feeds.  This add-on has only been tested on Amcrest
 cameras so it's far from proven.
 
 The addon uses ffmpeg to sample 5s of sound from the mic(s) every 10 seconds,
-then to report max and mean volume via MQTT every 60s (by default).
+then to report max and mean volume via MQTT every 60s.
 
 # To install as a local addon:
 
