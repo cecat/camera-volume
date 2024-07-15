@@ -53,25 +53,25 @@ To assign the MQTT data series' to Home Assistant variables that you can
 use (to graph, or trigger automations, etc.) you will need to associate
 the topics with Home Assistant variables.  You do this in your
 */config/configuration.yaml* file in the form of the
-code block below. In this example, the cameras are named "drivewaycam"
-and "poolcam." You may also have another scheme you use to name 
+code block below. In this example, the cameras are named "foocam"
+and "barcam." You may also have another scheme you use to name 
 variables. As with camera names (or mqtt topics), these names can
 be whatever works for you.
 
 ```
 mqtt:
   sensor:
-    - name: "drivewaycam_volume_mean"
-      state_topic: "HA/sensor/drivewaycam_audio_volume_mean"
+    - name: "foocam_volume_mean"
+      state_topic: "HA/sensor/foocam_audio_volume_mean"
       unit_of_measurement: 'dB'
-    - name: "drivewaycam_volume_max"
-      state_topic: "HA/sensor/drivewaycam_audio_volume_max"
+    - name: "foocam_volume_max"
+      state_topic: "HA/sensor/foocam_audio_volume_max"
       unit_of_measurement: 'dB'
-    - name: "poolcam_volume_mean"
-      state_topic: "HA/sensor/poolcam_audio_volume_mean"
+    - name: "barcam_volume_mean"
+      state_topic: "HA/sensor/barcam_audio_volume_mean"
       unit_of_measurement: 'dB'
-    - name: "poolcam_volume_max"
-      state_topic: "HA/sensor/poolcam_audio_volume_max"
+    - name: "barcam_volume_max"
+      state_topic: "HA/sensor/barcam_audio_volume_max"
       unit_of_measurement: 'dB'
 ```
 

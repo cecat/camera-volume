@@ -90,8 +90,8 @@ except Exception as e:
 
 # Sample interval could be set in config but I think 10s is a reasonable start, as
 # each sample is 5s duration so we are monitoring 50% of the time (ok maybe       
-# that is more than we need,  so maybe I'll move these values in a                
-# future version to the user config file but for now trying to keep things simple 
+# that is more than we need,  so I'll move these values in a                
+# future version to the user config file but for now trying to keep things simple).
                                                                                            
 sample_interval = 10  # Sample every 10 seconds       
 
