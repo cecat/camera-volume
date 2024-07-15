@@ -1,6 +1,6 @@
 name: "Camera Volume"
 description: "Extract audio volume levels from camera mics via RTSP streams using FFmpeg"
-version: "1.0.3"
+version: "1.0.1"
 slug: "camera-volume"
 init: false
 arch:
@@ -10,9 +10,14 @@ arch:
   - armv7
   - i386
 startup: services
+
+# config for mqtt and rtsp feeds specified in /config/cameravolume.yaml
 options: {}
 schema: {}
+
 logo: "logo.png"
 icon: "icon.png"
 map:
   - config:rw
+url: "https://github.com/cecat/camera-volume"
+

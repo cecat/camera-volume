@@ -6,7 +6,8 @@ RUN apk add --no-cache ffmpeg python3 py3-pip
 
 # Create a virtual environment and install Python packages
 RUN python3 -m venv /venv
-RUN /venv/bin/pip install paho-mqtt PyYAML
+RUN /venv/bin/pip install --upgrade pip
+RUN /venv/bin/pip install --upgrade paho-mqtt PyYAML
 
 # Copy data for add-on
 COPY run.sh /
