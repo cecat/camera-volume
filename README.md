@@ -30,13 +30,24 @@ Now the add-on should appear in your add-on store categorized as a local addon.
 For each camera, the addon creates two MQTT topics of the form
 "HA/sensor/<camera_name>_audio_volume_mean" and "HA/sensor/<camera_name>_audio_volume_max"
 (the HA/sensor prefix can be configured in /config/cameravolume.yamlif you prefer a different prefix)
-In your /config/configuration.yaml file you will associate the topics with variables:
+In your /config/configuration.yaml file you will associate the topics with variables as in the
+code block below, for instance if your cameras are named "drivewaycam" and "poolcam." (you may
+have other conventions you use for the names)
 
 ```
 mqtt:
   sensor:
-    - name: "frontyardcam_volume"
-      state_topic: "HA/sensor/frontyardcam_audio_volume_mean"
+    - name: "drivewaycam_volume_mean"
+      state_topic: "HA/sensor/drivewaycam_audio_volume_mean"
+      unit_of_measurement: 'dB'
+    - name: "drivewaycam_volume_max"
+      state_topic: "HA/sensor/drivewaycam_audio_volume_max"
+      unit_of_measurement: 'dB'
+    - name: "poolcam_volume_mean"
+      state_topic: "HA/sensor/poolcam_audio_volume_mean"
+      unit_of_measurement: 'dB'
+    - name: "poolcam_volume_max"
+      state_topic: "HA/sensor/poolcam_audio_volume_max"
       unit_of_measurement: 'dB'
 ```
 
