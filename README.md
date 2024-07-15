@@ -41,6 +41,7 @@ then reload the page.  If it still does not show up, review the instructions abo
 For each camera, the addon creates two MQTT topics of the form
 
   *HA/sensor/<camera_name>_audio_volume_mean* and
+
   *HA/sensor/<camera_name>_audio_volume_max*
 
 (the HA/sensor prefix can be configured in /config/cameravolume.yamlif you prefer a different prefix)
