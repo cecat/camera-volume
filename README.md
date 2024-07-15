@@ -7,34 +7,34 @@ to parse rtsp feeds.  This add-on has only been tested on Amcrest
 cameras so it's far from proven.
 
 The addon uses ffmpeg to sample sound from the mic(s) every 5 seconds,
-then to report max and mean volume via MQTT every 60s (by default,
-but can be changed in /config/cameravolume.yamlif (stats_interval). 
-If you want to sample less frequently, this can be adjusted in the
-python code (src/get_audio_volume.py  - sample_interval) just
-above the main loop).
+then to report max and mean volume via MQTT every 60s (by default).
 
 # To install as a local addon:
 
 1. Customize *cameravolume.yaml* with specifics regarding your MQTT broker address,
 MQTT username and password, and RTSP feeds. These will be the same feeds you use
 in Frigate (if you use Frigate), which may have embedded credentils
-(so treat this as a secrets file).
+(so treat this as a secrets file). If you want to report less frequently than
+every 60s you can change the *stats_interval* value in this file.
 
-2. Move *cameravolume.yaml* to */config* in Home Assistant
+2. Move *cameravolume.yaml* to the */config* directory in Home Assistant
 
 3. If you don't already have */addons/local* in Home Assistant, create it. Then
 create a directory for this particular local addon, named *cameravolume*.
 Thus you now have */addons/local/cameravolume* in Home Assistant.
 
-4. Move all of the files in the *src* directory into a */addons/local/caameravolume*.
+4. Move all of the files in the *src* directory into the */addons/local/caameravolume*
+folder in Home Assistant..
 
 5. Make sure the permissions are correct - in your */addons/local/cameravolume*
-directory in Home Assistant do a 
+directory in Home Assistant set them:
 ```
-chmod 755 .*
+chmod 755 ./*
 ```
 
-Now the add-on should appear in your add-on store categorized as a local addon.
+You should now be able to go to the Add-on store and see this add-on in the local
+section.  If not, select "Check for Updates" from the 3-dot icon at upper right, 
+then reload the page.  If it still does not show up, review the instructions above.
 
 # To use the addon measurements
 
