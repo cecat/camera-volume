@@ -6,7 +6,7 @@ Monitor volume levels from microphones on remote cameras using ffmpeg
 to parse rtsp feeds.  This add-on has only been tested on Amcrest
 cameras so it's far from proven.
 
-The addon uses ffmpeg to sample sound from the mic(s) every 5 seconds,
+The addon uses ffmpeg to sample 5s of sound from the mic(s) every 10 seconds,
 then to report max and mean volume via MQTT every 60s (by default).
 
 # To install as a local addon:
