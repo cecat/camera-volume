@@ -32,12 +32,11 @@ For each camera, the addon creates two MQTT topics of the form
 (the HA/sensor prefix can be configured in /config/cameravolume.yamlif you prefer a different prefix)
 In your /config/configuration.yaml file you will associate the topics with variables:
 
-'''
+```
 mqtt:
   sensor:
     - name: "frontyardcam_volume"
       state_topic: "HA/sensor/frontyardcam_audio_volume_mean"
       unit_of_measurement: 'dB'
-'''
-
+```
 
