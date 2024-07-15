@@ -46,10 +46,15 @@ For each camera, the addon creates two MQTT topics of the form
 
   *HA/sensor/<camera_name>_audio_volume_max*
 
-(the HA/sensor prefix can be configured in /config/cameravolume.yamlif you prefer a different prefix)
-In your /config/configuration.yaml file you will associate the topics with variables as in the
-code block below, for instance if your cameras are named "drivewaycam" and "poolcam." (you may
-have other conventions you use for the names)
+If you prefer a prefix different than HA/sensor this can be configured in
+*/config/cameravolume.yaml*.
+
+To assign the MQTT data series' to Home Assistant variables that you can
+use (to graph, or trigger automations, etc.) you will need to associate
+the topics with Home Assistant variables.  You do this in your
+*/config/configuration.yaml* file in the form of the
+code block below. In this example, the cameras are named "drivewaycam"
+and "poolcam." 
 
 ```
 mqtt:
