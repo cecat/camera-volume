@@ -15,7 +15,10 @@ above the main loop).
 
 # To install as a local addon:
 
-1. Customize *cameravolume.yaml* with specifics regarding your MQTT broker address, MQTT username and password, and RTSP feeds (the same feeds you use in Frigate, which will have embedded credentils (so treat this as a secrets file)).
+1. Customize *cameravolume.yaml* with specifics regarding your MQTT broker address,
+MQTT username and password, and RTSP feeds. These will be the same feeds you use
+in Frigate (if you use Frigate), which may have embedded credentils
+(so treat this as a secrets file).
 
 2. Move cameravolume.yaml to /config in Home Assistant
 
