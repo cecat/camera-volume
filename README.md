@@ -2,7 +2,8 @@
 CeC
 July 2024
 
-Monitor volume levels from microphones on remote cameras using ffmpeg to parse rtsp feeds.
+Monitor volume levels from microphones on remote cameras using ffmpeg to parse rtsp feeds.  This add-on
+has only been tested on Amcrest cameras so it's far from proven.
 
 # To install as a local addon:
 
