@@ -23,8 +23,8 @@ every 60s you can change the *stats_interval* value in this file.
 create a directory for this particular local addon, named *cameravolume*.
 Thus you now have */addons/local/cameravolume* in Home Assistant.
 
-4. Move all of the files in the *src* directory into the */addons/local/caameravolume*
-folder in Home Assistant..
+4. Move all of the files in the *src* directory here into the */addons/local/caameravolume*
+directory in Home Assistant..
 
 5. Make sure the permissions are correct - in your */addons/local/cameravolume*
 directory in Home Assistant set them:
