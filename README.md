@@ -20,11 +20,16 @@ MQTT username and password, and RTSP feeds. These will be the same feeds you use
 in Frigate (if you use Frigate), which may have embedded credentils
 (so treat this as a secrets file).
 
-2. Move cameravolume.yaml to /config in Home Assistant
+2. Move *cameravolume.yaml* to */config* in Home Assistant
 
-3. If you don't already have /addons/local in Home Assistant, create it. Then create a directory for this particular local addon, named cameravolume.  Thus you now have /addons/local/cameravolume in Home Assistant.
+3. If you don't already have */addons/local* in Home Assistant, create it. Then
+create a directory for this particular local addon, named *cameravolume*.
+Thus you now have */addons/local/cameravolume* in Home Assistant.
 
-4. Move all of the files in the src directory into a /addons/local/caameravolume
+4. Move all of the files in the *src* directory into a */addons/local/caameravolume*.
+
+5. Make sure the permissions are correct - in your */addons/local/cameravolume*
+directory in Home Assistant do a *chmod 755 ./\**.
 
 Now the add-on should appear in your add-on store categorized as a local addon.
 
