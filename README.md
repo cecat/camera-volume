@@ -54,7 +54,9 @@ use (to graph, or trigger automations, etc.) you will need to associate
 the topics with Home Assistant variables.  You do this in your
 */config/configuration.yaml* file in the form of the
 code block below. In this example, the cameras are named "drivewaycam"
-and "poolcam." 
+and "poolcam." You may also have another scheme you use to name 
+variables. As with camera names (or mqtt topics), these names can
+be whatever works for you.
 
 ```
 mqtt:
