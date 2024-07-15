@@ -39,7 +39,10 @@ then reload the page.  If it still does not show up, review the instructions abo
 # To use the addon measurements
 
 For each camera, the addon creates two MQTT topics of the form
-"HA/sensor/<camera_name>_audio_volume_mean" and "HA/sensor/<camera_name>_audio_volume_max"
+
+  *HA/sensor/<camera_name>_audio_volume_mean* and
+  *HA/sensor/<camera_name>_audio_volume_max*
+
 (the HA/sensor prefix can be configured in /config/cameravolume.yamlif you prefer a different prefix)
 In your /config/configuration.yaml file you will associate the topics with variables as in the
 code block below, for instance if your cameras are named "drivewaycam" and "poolcam." (you may
