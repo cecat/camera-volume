@@ -2,9 +2,11 @@
 CeC
 July 2024
 
-### NOTE: This is a local add-on, so installing it will mean having the static files on your
-machine.  I recommend that you navigate to your add-on page, add the repository,
-and install the add-on from its repository so that you are able to get updates/fixes:
+### NOTE: This is a local add-on
+Installing it from here will mean having the static files on your
+machine.  I recommend instead that you add the repository below to
+our Add-on store page, and install the add-on from its repository
+so that you are able to get updates/fixes:
 ```
 https://github.com/cecat/CeC-HA-Addons.git
 ```
