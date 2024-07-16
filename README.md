@@ -2,6 +2,15 @@
 CeC
 July 2024
 
+### This is a local addon, so installing it will mean having the static files on your
+machine.  I recommend that you install this add-on repository and install from there
+so that you are able to get updates/fixes:
+```
+https://github.com/cecat/CeC-HA-Addons.git
+```
+
+## Description
+
 Monitor volume levels from microphones on remote cameras using ffmpeg
 to parse rtsp feeds.  This add-on has only been tested on Amcrest
 cameras so it's far from proven.
@@ -9,7 +18,7 @@ cameras so it's far from proven.
 The addon uses ffmpeg to sample 5s of sound from the mic(s) every 10s,
 then to report max and mean volume via MQTT every 60s.
 
-# To install as a local addon:
+## To install as a local addon:
 
 1. Customize *cameravolume.yaml* with specifics regarding your MQTT broker address,
 MQTT username and password, and RTSP feeds. These will be the same feeds you use
@@ -36,7 +45,7 @@ You should now be able to go to the Add-on store and see this add-on in the loca
 section.  If not, select "Check for Updates" from the 3-dot icon at upper right, 
 then reload the page.  If it still does not show up, review the instructions above.
 
-# To use the addon measurements
+## To use the addon measurements
 
 For each camera, the addon creates two MQTT topics of the form
 
@@ -75,7 +84,7 @@ mqtt:
       unit_of_measurement: 'dB'
 ```
 
-# A Note about FFmpeg volume measurements
+## A Note about FFmpeg volume measurements
 
 FFmpeg measurements are in dBFS (decibels relative to Full Scale), where the maximum
 possible volume level (digitally, from the point of view of the microphone) is 0 dBFS.
