@@ -36,6 +36,8 @@ mqtt_stats_interval = mqtt_settings.get('stats_interval', 60)
 camera_settings = config.get('cameras', {})
 
 
+# Build the ffmpeg command(s) and parse its output
+
 def get_audio_volume(rtsp_url, duration=5):
     command = [
         'ffmpeg',
@@ -109,23 +111,34 @@ while True:
                 max_samples.append(max_volume)
             time.sleep(sample_interval)
 
+	# we average the mean and max volume samples over the sample_interval reporting period,
+        # then we report to HASS via mqtt
+
         if mean_samples and max_samples:
             average_mean_volume = sum(mean_samples) / len(mean_samples)
             average_max_volume = sum(max_samples) / len(max_samples)
 
             if mqtt_client.is_connected():
                 try:
-                    result = mqtt_client.publish("{}/{}_audio_volume_mean".format(mqtt_topic_prefix, camera_name), average_mean_volume)
+                    result = mqtt_client.publish(
+                        "{}/{}_audio_volume_mean".format(mqtt_topic_prefix, camera_name),
+                        "{:.2f}".format(average_mean_volume)
+                    )
                     result.wait_for_publish()
+
                     if result.rc == mqtt.MQTT_ERR_SUCCESS:
-                        logger.info(f"Published mean volume for {camera_name}: {average_mean_volume}")
+                        logger.info(f"Published mean volume for {camera_name}: {average_mean_volume:.2f}")
                     else:
                         logger.error(f"Failed to publish MQTT message for mean volume, return code: {result.rc}")
 
-                    result = mqtt_client.publish("{}/{}_audio_volume_max".format(mqtt_topic_prefix, camera_name), average_max_volume)
+                    result = mqtt_client.publish(
+                        "{}/{}_audio_volume_max".format(mqtt_topic_prefix, camera_name),
+                        "{:.2f}".format(average_max_volume)
+                    )
                     result.wait_for_publish()
+
                     if result.rc == mqtt.MQTT_ERR_SUCCESS:
-                        logger.info(f"Published max volume for {camera_name}: {average_max_volume}")
+                        logger.info(f"Published max volume for {camera_name}: {average_max_volume:.2f}")
                     else:
                         logger.error(f"Failed to publish MQTT message for max volume, return code: {result.rc}")
                 except Exception as e:

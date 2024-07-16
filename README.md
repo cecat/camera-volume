@@ -2,12 +2,14 @@
 CeC
 July 2024
 
-### NOTE: This is a local addon, so installing it will mean having the static files on your
-machine.  I recommend that you install this add-on repository and install from there
-so that you are able to get updates/fixes:
+### NOTE: This is a local add-on, so installing it will mean having the static files on your
+machine.  I recommend that you navigate to your add-on page, add the repository,
+and install the add-on from its repository so that you are able to get updates/fixes:
 ```
 https://github.com/cecat/CeC-HA-Addons.git
 ```
+
+[![Open your Home Assistant instance and show the add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
 
 ## Description
 
@@ -15,10 +17,10 @@ Monitor volume levels from microphones on remote cameras using ffmpeg
 to parse rtsp feeds.  This add-on has only been tested on Amcrest
 cameras so it's far from proven.
 
-The addon uses ffmpeg to sample 5s of sound from the mic(s) every 10s,
+The add-on uses ffmpeg to sample 5s of sound from the mic(s) every 10s,
 then to report max and mean volume via MQTT every 60s.
 
-## To install as a local addon:
+## To install as a local add-on:
 
 1. Customize *cameravolume.yaml* with specifics regarding your MQTT broker address,
 MQTT username and password, and RTSP feeds. These will be the same feeds you use
@@ -29,7 +31,7 @@ every 60s you can change the *stats_interval* value in this file.
 2. Move *cameravolume.yaml* to the */config* directory in Home Assistant
 
 3. If you don't already have */addons/local* in Home Assistant, create it. Then
-create a directory for this particular local addon, named *cameravolume*.
+create a directory for this particular local add-on, named *cameravolume*.
 Thus you now have */addons/local/cameravolume* in Home Assistant.
 
 4. Move all of the files in the *src* directory here into the */addons/local/caameravolume*
@@ -45,9 +47,9 @@ You should now be able to go to the Add-on store and see this add-on in the loca
 section.  If not, select "Check for Updates" from the 3-dot icon at upper right, 
 then reload the page.  If it still does not show up, review the instructions above.
 
-## To use the addon measurements
+## To use the add-on measurements
 
-For each camera, the addon creates two MQTT topics of the form
+For each camera, the add-on creates two MQTT topics of the form
 
   *HA/sensor/<camera_name>_audio_volume_mean*
 
@@ -90,9 +92,9 @@ FFmpeg measurements are in dBFS (decibels relative to Full Scale), where the max
 possible volume level (digitally, from the point of view of the microphone) is 0 dBFS.
 So these dBFS measurementsare negative numbers, and differ from the more commonly
 seen dB SPL (Sound Pressure Level) measurements we see.  With my very 
-limited poking around I see dBFS readings from this addon in the -50 to -60 range
+limited poking around I see dBFS readings from this add-on in the -50 to -60 range
 for a quiet evening without traffic noise, and about -40 playing Gimme Shelter near
 the camera at a volume my Apple watch pegged at 75dB.
 
-It's non-trivial to map dBFS to DB SPL, so this addon is more aimed at detecting
+It's non-trivial to map dBFS to DB SPL, so this add-on is more aimed at detecting
 changes or unusual sound events.
