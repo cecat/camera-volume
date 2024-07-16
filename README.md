@@ -2,7 +2,7 @@
 CeC
 July 2024
 
-### This is a local addon, so installing it will mean having the static files on your
+### NOTE: This is a local addon, so installing it will mean having the static files on your
 machine.  I recommend that you install this add-on repository and install from there
 so that you are able to get updates/fixes:
 ```
